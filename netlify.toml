@@ -1,6 +1,7 @@
 [build]
-  command = "mkdir dist && cp -r Admin/Frontend/* dist/ && mkdir dist/Store && cp -r Store/* dist/Store/ && cd Admin/Backend && npm install"
+  command = "rm -rf dist && mkdir -p dist && cp -r Admin/Frontend/* dist/ && mkdir -p dist/Store && cp -r Store/* dist/Store/ && cd Admin/Backend && npm install"
   publish = "dist"
+
   functions = "netlify/functions"
 
 [[redirects]]
