@@ -1,0 +1,13 @@
+[build]
+  command = "mkdir dist && cp -r Admin/Frontend/* dist/ && mkdir dist/Store && cp -r Store/* dist/Store/ && cd Admin/Backend && npm install"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true
+
+[functions]
+  node_bundler = "esbuild"
